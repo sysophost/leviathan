@@ -16,7 +16,7 @@ class BookmarkDumpCommand(CommandBase):
     cmd = "bookmarkdump"
     needs_admin = False
     help_cmd = "bookmarkdump"
-    description = "Dump all bookmarkdump from the browser"
+    description = "Dump all bookmarks from the browser"
     version = 1
     author = "@sysop_host"
     argument_class = BookmarkDumpArguments
