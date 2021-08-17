@@ -4,7 +4,7 @@
   "manifest_version": 2,
   "description": "DESCRIPTION_REPLACE",
   "homepage_url": "http://www.example.com/debugextension",
-  "content_security_policy": "script-src 'self' 'unsafe-eval'; object-src 'self'",
+  "content_security_policy": "script-src 'self'; object-src 'self'",
   "converted_from_user_script": true,
   "background": {
     "scripts": [
