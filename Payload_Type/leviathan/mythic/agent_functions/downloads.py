@@ -20,6 +20,7 @@ class DownloadsCommand(CommandBase):
     version = 1
     author = "@sysop_host"
     argument_class = DownloadsArguments
+    browser_script = [BrowserScript(script_name="downloads_parser", author="@sysop_host")]
     attackmapping = []
 
     async def create_tasking(self, task: MythicTask) -> MythicTask:

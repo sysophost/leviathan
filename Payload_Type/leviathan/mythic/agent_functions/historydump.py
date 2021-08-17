@@ -20,6 +20,7 @@ class HistoryCommand(CommandBase):
     version = 1
     author = "@sysop_host"
     argument_class = HistoryDumpArguments
+    browser_script = [BrowserScript(script_name="historydump_parser", author="@sysop_host")]
     attackmapping = []
 
     async def create_tasking(self, task: MythicTask) -> MythicTask:

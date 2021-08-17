@@ -1,11 +1,12 @@
-from mythic_payloadtype_container.MythicCommandBase import *
-from mythic_payloadtype_container.PayloadBuilder import *
-import uuid
 import asyncio
 import os
-from distutils.dir_util import copy_tree
-import tempfile
 import shutil
+import tempfile
+import uuid
+from distutils.dir_util import copy_tree
+
+from mythic_payloadtype_container.MythicCommandBase import *
+from mythic_payloadtype_container.PayloadBuilder import *
 
 
 class Leviathan(PayloadType):
@@ -16,6 +17,12 @@ class Leviathan(PayloadType):
     supported_os = [SupportedOS.Chrome]
     wrapper = False
     mythic_encrypts = True
+    support_browser_scripts = [
+        BrowserScript(script_name="create_table", author="@sysop_host"),
+        BrowserScript(script_name="epoch_to_human_readable", author="@sysop_host"),
+        BrowserScript(script_name="iso_date_to_human_readable", author="@sysop_host"),
+        BrowserScript(script_name="long_epoch_to_human_readable", author="@sysop_host")
+    ]
     wrapped_payloads = []
     note = "This payload uses javascript, html, and CSS for execution in the context of a browser via a Chrome Browser extension"
     supports_dynamic_loading = False

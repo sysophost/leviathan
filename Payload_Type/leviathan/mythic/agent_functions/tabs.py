@@ -1,5 +1,6 @@
-from mythic_payloadtype_container.MythicCommandBase import *
 import json
+
+from mythic_payloadtype_container.MythicCommandBase import *
 
 
 class TabsArguments(TaskArguments):
@@ -19,6 +20,7 @@ class TabsCommand(CommandBase):
     version = 1
     author = "@xorrior"
     argument_class = TabsArguments
+    browser_script = [BrowserScript(script_name="tabs_parser", author="@sysop_host")]
     attackmapping = []
 
     async def create_tasking(self, task: MythicTask) -> MythicTask:

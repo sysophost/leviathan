@@ -1,5 +1,6 @@
-from mythic_payloadtype_container.MythicCommandBase import *
 import json
+
+from mythic_payloadtype_container.MythicCommandBase import *
 
 
 class CookieDumpArguments(TaskArguments):
@@ -19,6 +20,7 @@ class CookieDumpCommand(CommandBase):
     version = 1
     author = "@xorrior"
     argument_class = CookieDumpArguments
+    browser_script = [BrowserScript(script_name="cookiedump_parser", author="@sysop_host")]
     attackmapping = []
 
     async def create_tasking(self, task: MythicTask) -> MythicTask:
