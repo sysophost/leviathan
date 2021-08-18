@@ -2,18 +2,16 @@ exports.hostrewrite = function(task) {
     try {
         let args = JSON.parse(task.parameters.toString());
         const host = args.host;
+
+
         chrome.webRequest.onBeforeSendHeaders.addListener(
-            function(details) {
-              for (var i = 0; i < details.requestHeaders.length; ++i) {
-                if (details.requestHeaders[i].name === 'Host') {
-                    details.requestHeaders[i].value = host;
-                  break;
-                }
-              }
+            details => {
+              details.requestHeaders = details.requestHeaders.filter(rh => rh.name !== 'Host');
+              details.requestHeaders.push({name: 'Host', value: host});
               return {requestHeaders: details.requestHeaders};
             },
-            {urls: ["<all_urls>"]},
-            ["blocking", "requestHeaders"]
+            {urls: ['<all_urls>']},
+            ['blocking', 'requestHeaders']
 
           ,function(){
             if (chrome.runtime.lastError) {
