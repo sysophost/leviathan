@@ -1,6 +1,6 @@
 exports.hostrewrite = function(task) {
     try {
-        let args = JSON.parse(atob(task.parameters.toString()));
+        let args = JSON.parse(task.parameters.toString());
         const host = args.host;
         chrome.webRequest.onBeforeSendHeaders.addListener(
             function(details) {
