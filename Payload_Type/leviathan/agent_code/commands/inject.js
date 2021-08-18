@@ -1,11 +1,9 @@
 exports.inject = function(task) {
     // execute custom javascript code in a tab
     try {
-        // let args = JSON.parse(atob(task.parameters.toString()));
         let args = JSON.parse(task.parameters.toString());
         const tab = Math.round(args.tabid);
         const code = atob(args.javascript);
-        console.log("will run: " + code);
         chrome.tabs.executeScript(tab, {
             code: code
         }, function(){
