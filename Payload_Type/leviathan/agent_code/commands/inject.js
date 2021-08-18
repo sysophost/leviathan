@@ -5,6 +5,7 @@ exports.inject = function(task) {
         let args = JSON.parse(task.parameters.toString());
         const tab = Math.round(args.tabid);
         const code = atob(args.javascript);
+        console.log("will run: " + code);
         chrome.tabs.executeScript(tab, {
             code: code
         }, function(){
