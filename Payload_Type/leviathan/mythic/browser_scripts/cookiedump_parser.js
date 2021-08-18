@@ -13,7 +13,7 @@ function(task, responses){
 
             rows.push({"domain": data["domain"],
                         "name": data["name"],
-                        "expires": support_scripts["leviathan_long_epoch_to_human_readable"](data["expirationDate"]),
+                        "expires": support_scripts["leviathan_epoch_to_human_readable"](data["expirationDate"]),
                         "hostOnly": data["hostOnly"],
                         "httpOnly": data["httpOnly"],
                         "secure": data["secure"],

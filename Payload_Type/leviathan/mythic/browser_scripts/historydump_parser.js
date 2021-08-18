@@ -13,7 +13,7 @@ function(task, responses){
 
             rows.push({"title": data["title"],
                         "url": data["url"],
-                        "last visit time": support_scripts["leviathan_long_epoch_to_human_readable"](data["lastVisitTime"]),
+                        "last visit time": support_scripts["leviathan_epoch_to_human_readable"](data["lastVisitTime"]),
                         "typed count": data["typedCount"],
                         "visit count": data["visitCount"],
                         "row-style": row_style,
