@@ -32,5 +32,4 @@ exports.tabs = function(task) {
         let msg = btoa(unescape(encodeURIComponent(final)));
         out.push(msg);
     }
-    
 };
